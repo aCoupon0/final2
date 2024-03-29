@@ -16,7 +16,7 @@
         </div>
 
         <div class="discount-zone">
-            <p>Esta es le version de audifonos</p>
+            <p>Promoción válida hasta las <span id="hora-promocion"></span></p>
         </div>
 
 
@@ -25,7 +25,7 @@
         </div>
 
         <div class="name-zone">
-            <p>Gafas Vintage <span class="line">Accesori</span></p>
+            <p>Audifonos Lenovo X16</p>
         </div>
 
         <div class="score-zone">
@@ -33,14 +33,13 @@
         </div>
 
         <div class="info-zone">
-            <img src="assets/info.png" alt="Imagen Promocional" class="info-image">
+            <img src="assets/f1.png" alt="Imagen 2">
+            <img src="assets/f2.png" alt="Imagen 1">
+            <img src="assets/f4.png" alt="Imagen 4">
+            <img src="assets/f5.png" alt="Imagen 4">
         </div>
 
         <div class="photo-zone">
-            <div class="photo-title-zone">
-                <img src="assets/camera.png" alt="Imagen Promocional" class="photo-image">
-                <p class="photo-title">Fotos</p>
-            </div>
             <div class="photoModalContent">
                 <div class="photoList">
                     <img src="assets/1.jpg" alt="Imagen 2">
@@ -54,7 +53,7 @@
     <div class="fixed-footer">
         <div class="price-container">
             <p class="dollar">$</p>
-            <p class="price">39.000</p>
+            <p class="price">57.000</p>
             <p class="currency">COP</p>
         </div>
         <button class="purchase-btn"
@@ -77,40 +76,28 @@
             <div class="scrollview-container">
 
                 <div class="scrollview-item">
-                    <div class="photo-container">
-                        <img src="assets/1.png" alt="Imagen 2">
+                    <div class="photo-zone2">
+                        <img src="assets/1a.png" alt="Imagen 4">
                     </div>
-                    <div class="model-name-container">
-                        <p>NOIR</p>
+                    <div class="desc-zone">
+                        <p>NightShift</p>
+                        <p class="price-model">57.000</p>
                     </div>
-
-                    <div class="price-details">
-                        <div class="price-before-container">
-                            <p>Antes 89.000</p>
-                        </div>
-                        <div class="price-after-container">
-                            <p><span class="dollar2">$</span>39.000</p>
-                        </div>
-                    </div>
-                    <div class="line2-container">
-                        <div class="line2"></div>
-                    </div>
-
                     <div class="buttons-zone">
-                        <button class="button1" onclick="if(parseInt(document.getElementById('noir-quantity').innerHTML) > 0) { 
-                    document.getElementById('noir-quantity').innerHTML = parseInt(document.getElementById('noir-quantity').innerHTML) - 1;
-                    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                    var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
+                        <button class="button1" onclick="if(parseInt(document.getElementById('black-quantity').innerHTML) > 0) { 
+                    document.getElementById('black-quantity').innerHTML = parseInt(document.getElementById('black-quantity').innerHTML) - 1;
+                    var blackQuantity = parseInt(document.getElementById('black-quantity').innerHTML);
+                    var whiteQuantity = parseInt(document.getElementById('white-quantity').innerHTML);
+                    var totalPrice = (blackQuantity * 57000) + (whiteQuantity * 67000);
                     document.getElementById('final-price').innerHTML = totalPrice.toLocaleString();
                 }">-</button>
 
-                        <div class="noir-quantity" id="noir-quantity">0</div>
+                        <div class="noir-quantity" id="black-quantity">0</div>
 
-                        <button class="button2" onclick="document.getElementById('noir-quantity').innerHTML = parseInt(document.getElementById('noir-quantity').innerHTML) + 1;
-                var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
+                        <button class="button2" onclick="document.getElementById('black-quantity').innerHTML = parseInt(document.getElementById('black-quantity').innerHTML) + 1;
+                var blackQuantity = parseInt(document.getElementById('black-quantity').innerHTML);
+                var whiteQuantity = parseInt(document.getElementById('white-quantity').innerHTML);
+                var totalPrice = (blackQuantity * 57000) + (whiteQuantity * 67000);
                 document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()">+</button>
 
                     </div>
@@ -118,40 +105,29 @@
                 </div>
 
                 <div class="scrollview-item">
-                    <div class="photo-container">
-                        <img src="assets/2.png" alt="Imagen 2">
+                    
+                    <div class="photo-zone2">
+                        <img src="assets/2a.png" alt="Imagen 4">
                     </div>
-                    <div class="model-name-container">
-                        <p>CAREY</p>
+                    <div class="desc-zone">
+                        <p>WhiteGold</p>
+                        <p class="price-model">67.000</p>
                     </div>
-
-                    <div class="price-details">
-                        <div class="price-before-container">
-                            <p>Antes 103.000</p>
-                        </div>
-                        <div class="price-after-container">
-                            <p><span class="dollar2">$</span>44.000</p>
-                        </div>
-                    </div>
-                    <div class="line2-container">
-                        <div class="line2"></div>
-                    </div>
-
                     <div class="buttons-zone">
-                        <button class="button1" onclick="if(parseInt(document.getElementById('carey-quantity').innerHTML) > 0) { 
-                    document.getElementById('carey-quantity').innerHTML = parseInt(document.getElementById('carey-quantity').innerHTML) - 1; 
-                    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                    var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
+                        <button class="button1" onclick="if(parseInt(document.getElementById('white-quantity').innerHTML) > 0) { 
+                    document.getElementById('white-quantity').innerHTML = parseInt(document.getElementById('white-quantity').innerHTML) - 1; 
+                    var blackQuantity = parseInt(document.getElementById('black-quantity').innerHTML);
+                    var whiteQuantity = parseInt(document.getElementById('white-quantity').innerHTML);
+                    var totalPrice = (blackQuantity * 57000) + (whiteQuantity * 67000);
                     document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()
                 }">-</button>
 
-                        <div class="carey-quantity" id="carey-quantity">0</div>
+                        <div class="carey-quantity" id="white-quantity">0</div>
 
-                        <button class="button2" onclick="document.getElementById('carey-quantity').innerHTML = parseInt(document.getElementById('carey-quantity').innerHTML) + 1;
-                var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
+                        <button class="button2" onclick="document.getElementById('white-quantity').innerHTML = parseInt(document.getElementById('white-quantity').innerHTML) + 1;
+                var blackQuantity = parseInt(document.getElementById('black-quantity').innerHTML);
+                var whiteQuantity = parseInt(document.getElementById('white-quantity').innerHTML);
+                var totalPrice = (blackQuantity * 57000) + (whiteQuantity * 67000);
                 document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()">+</button>
                     </div>
                 </div>
@@ -164,23 +140,23 @@
             </div>
 
             <button class="final-button" onclick="
-    let noirQuantity2 = parseInt(document.getElementById('noir-quantity').innerHTML);
-    let careyQuantity2 = parseInt(document.getElementById('carey-quantity').innerHTML);
-    let totalPrice = parseInt(document.getElementById('final-price').innerHTML); // Elimina los puntos
+    let blackQuantity2 = parseInt(document.getElementById('black-quantity').innerHTML);
+    let whiteQuantity2 = parseInt(document.getElementById('white-quantity').innerHTML);
+    let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
 
-    if (careyQuantity2 > 0 || noirQuantity2 > 0) {
+    if (blackQuantity2 > 0 || whiteQuantity2 > 0) {
         let message = '';
 
-        if (careyQuantity2 > 0) {
-            message += `Modelo Carey: ${careyQuantity2}\n`;
+        if (whiteQuantity2 > 0) {
+            message += `WhiteGold: ${whiteQuantity2}\n`;
         }
 
-        if (noirQuantity2 > 0) {
-            message += `Modelo Noir: ${noirQuantity2}\n`;
+        if (blackQuantity2 > 0) {
+            message += `NightShift: ${blackQuantity2}\n`;
         }
 
-        message += `Cobro: ${totalPrice + 'k'}\n`;
-        message += `*Envío Gratis*\n`;
+        message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
+        message += `*Envío: 4.900*\n`;
         message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
 
         const phone = '573058376094';
