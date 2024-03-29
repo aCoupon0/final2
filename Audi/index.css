@@ -161,6 +161,7 @@ html {
 
 .info-zone img {
     height: 80%;
+    widht: auto;
     flex: 0 0 auto;
     margin: 18px; 
 }
