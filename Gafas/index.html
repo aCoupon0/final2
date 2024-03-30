@@ -193,44 +193,39 @@
                                 <img src="assets/contraentrega.png" alt="">
                             </div>
                             <button class="send-button" onclick="
-                let noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                let careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
+    let noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
+    let careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
+    let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
 
-                let nombre = document.getElementById('nombre2').value;
-                let direccion = document.getElementById('direccion2').value;
+    let nombre = document.getElementById('nombre2').value;
+    let direccion = document.getElementById('direccion2').value;
 
-                if (noirQuantity > 0 || careyQuantity > 0) {
-                    let message = '';
+    if ((nombre.trim().length > 0) && (direccion.trim().length > 0) && (noirQuantity > 0 || careyQuantity > 0)) {
+        let message = '';
 
-                    if (nombre) {
-                        message += `*Nombre:* ${nombre}\n`;
-                    }
-                    
-                    if (direccion) {
-                        message += `*Dirección:* ${direccion}\n`;
-                    }
+        message += `*Nombre:* ${nombre}\n`;
+        message += `*Dirección:* ${direccion}\n`;
 
-                    if (careyQuantity > 0) {
-                        message += `Carey: ${careyQuantity}\n`;
-                    }
+        if (careyQuantity > 0) {
+            message += `Carey: ${careyQuantity}\n`;
+        }
 
-                    if (noirQuantity > 0) {
-                        message += `Noir: ${noirQuantity}\n`;
-                    }
+        if (noirQuantity > 0) {
+            message += `Noir: ${noirQuantity}\n`;
+        }
 
-                    message += `*Envío: 4.900*\n`;
-                    message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
-                    message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
+        message += `*Envío: 4.900*\n`;
+        message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
+        message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
 
-                    const phone = '573058376094';
-                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        const phone = '573058376094';
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-                    window.location.href = url;
-                } else {
-                    alert('Por favor selecciona al menos un producto');
-                }
-            ">
+        window.location.href = url;
+    } else {
+        alert('Por favor completa todos los campos');
+    }
+">
                                 <p>Enviar</p>
                             </button>
                         </div>
