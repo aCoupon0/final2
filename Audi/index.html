@@ -182,44 +182,39 @@
                     <img src="assets/contraentrega.png" alt="">
                 </div>
                 <button class="send-button" onclick="
-        let blackQuantity2 = parseInt(document.getElementById('black-quantity').innerHTML);
-        let whiteQuantity2 = parseInt(document.getElementById('white-quantity').innerHTML);
-        let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
+    let blackQuantity2 = parseInt(document.getElementById('black-quantity').innerHTML);
+    let whiteQuantity2 = parseInt(document.getElementById('white-quantity').innerHTML);
+    let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
 
-        let nombre = document.getElementById('nombre').value;
-        let direccion = document.getElementById('direccion').value;
+    let nombre = document.getElementById('nombre').value;
+    let direccion = document.getElementById('direccion').value;
 
-        if (blackQuantity2 > 0 || whiteQuantity2 > 0) {
-            let message = '';
+    if ((nombre.trim().length > 0) && (direccion.trim().length > 0) && (blackQuantity2 > 0 || whiteQuantity2 > 0)) {
+        let message = '';
 
-            if (nombre) {
-                message += `*Nombre:* ${nombre}\n`;
-            }
-            
-            if (direccion) {
-                message += `*Dirección:* ${direccion}\n`;
-            }
+        message += `*Nombre:* ${nombre}\n`;
+        message += `*Dirección:* ${direccion}\n`;
 
-            if (whiteQuantity2 > 0) {
-                message += `WhiteGold: ${whiteQuantity2}\n`;
-            }
-
-            if (blackQuantity2 > 0) {
-                message += `NightShift: ${blackQuantity2}\n`;
-            }
-
-            message += `*Envío: 4.900*\n`;
-            message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
-            message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
-
-            const phone = '573058376094';
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-            window.location.href = url;
-        } else {
-            alert('Por favor selecciona al menos un producto');
+        if (whiteQuantity2 > 0) {
+            message += `WhiteGold: ${whiteQuantity2}\n`;
         }
-    ">
+
+        if (blackQuantity2 > 0) {
+            message += `NightShift: ${blackQuantity2}\n`;
+        }
+
+        message += `*Envío: 4.900*\n`;
+        message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
+        message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
+
+        const phone = '573058376094';
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+        window.location.href = url;
+    } else {
+        alert('Por favor completa todos los campos y selecciona al menos un producto');
+    }
+">
                     <p>Enviar</p>
                 </button>
             </div>
