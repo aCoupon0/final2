@@ -86,8 +86,8 @@ html {
 
 .discount-zone p {
     color: white;
-    font-family: 'Ale';
-    font-size: 24px;
+    font-family: 'Bogart';
+    font-size: 140%;
 }
 
 .main-photo-container {
@@ -299,12 +299,13 @@ html {
 
 .scrollview-item {
     display: inline-block;
-    width: 63%;
-    height: 90%;
+    width: 73%;
+    height: 87%;
     margin-top: 25px;
     margin-left: 20px;
-    background-color: rgba(0, 0, 0, 0.09);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 30px;
+    border: 1px solid #cccccc;
 }
 
 .scrollview-item:last-child {
@@ -313,12 +314,15 @@ html {
 
 .photo-container {
     width: 100%;
-    height: 33%;
-    background-color: rgba(0, 0, 0, 0.05);
+    height: 38%;
     border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.photo-container img {
+    width: 90%;
 }
 
 .model-name-container {
@@ -330,43 +334,26 @@ html {
 }
 
 .model-name-container p {
-    font-family: 'Ale';
-    font-weight: 900;
+    font-family: 'Bogart';
     font-size: 21px;
     margin-left: 20px;
+    margin-top: 16%;
 }
 
 .price-details {
     width: 100%;
-    height: 25%;
+    height: 23%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.price-before-container {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.price-after-container {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.price-before-container p {
+.price-details p {
     font-family: 'Bogart';
     color: #ff1e00c2;
     font-size: 19px;
+    margin-left: 15px;
 }
 
 .price-after-container p {
@@ -398,7 +385,7 @@ html {
 
 .buttons-zone {
     width: 100%;
-    height: 24%;
+    height: 22%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -433,10 +420,6 @@ html {
     font-family: 'Bogart';
     font-size: 45px;
     line-height: 0%;
-}
-
-.photo-container img {
-    width: 80%;
 }
 
 .final-price-container {
