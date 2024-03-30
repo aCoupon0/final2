@@ -11,8 +11,9 @@
 <body>
     <div class="background">
         <div class="logo-zone">
-            <p class="first-name">a</p>
-            <p class="second-name">Coupon</p>
+            <a href="../index.html">
+                <img src="assets/HOME.png" alt="" class="back">
+            </a>
         </div>
 
         <div class="discount-zone">
@@ -66,8 +67,9 @@
     <div class="modal" id="myModal">
         <div class="background">
             <div class="logo-zone">
-                <p class="first-name">a</p>
-                <p class="second-name">Coupon</p>
+                <button class="cancel" onclick="document.getElementById('myModal').style.display='none'">
+                    <img src="assets/back.png" alt="">
+                </button>
             </div>
 
             <div class="discount-zone">
@@ -158,33 +160,82 @@
             </div>
 
             <button class="final-button" onclick="
-    let noirQuantity2 = parseInt(document.getElementById('noir-quantity').innerHTML);
-    let careyQuantity2 = parseInt(document.getElementById('carey-quantity').innerHTML);
-    let totalPrice = parseInt(document.getElementById('final-price').innerHTML); // Elimina los puntos
+    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
+    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
 
-    if (careyQuantity2 > 0 || noirQuantity2 > 0) {
-        let message = '';
-
-        if (careyQuantity2 > 0) {
-            message += `Modelo Carey: ${careyQuantity2}\n`;
-        }
-
-        if (noirQuantity2 > 0) {
-            message += `Modelo Noir: ${noirQuantity2}\n`;
-        }
-
-        message += `Cobro: ${((parseInt(totalPrice)*1000) + 3900).toLocaleString()}\n`;
-        message += `*Envío: 3.900*\n`;
-        message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
-
-        const phone = '573058376094';
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-        window.location.href = url;
+    if (noirQuantity > 0 || careyQuantity > 0) {
+        document.getElementById('myModal2Gafa').style.display='block';
     } else {
-        alert('Por favor selecciona al menos un producto');
+        alert('Por favor selecciona al menos una unidad');
     }
-">CONFIRMAR</button>
+">
+
+                <div class="modal2" id="myModal2Gafa">
+                    <div class="modal2-content">
+                        <div class="logo2-zone">
+                            <button class="cancel"
+                                onclick="document.getElementById('myModal2Gafa').style.display='none'">
+                                <img src="assets/back.png" alt="">
+                            </button>
+                        </div>
+                        <div class="form">
+                            <div class="label-text">
+                                <p>Solo faltaría...</p>
+                            </div>
+
+                            <div class="input-container">
+                                <input id="nombre2" type="text" placeholder="Tu nombre">
+                                <input id="direccion2" type="text" placeholder="Ciudad & Dirección">
+                            </div>
+                        </div>
+                        <div class="send-button-container">
+                            <div class="contra-container">
+                                <img src="assets/contraentrega.png" alt="">
+                            </div>
+                            <button class="send-button" onclick="
+                let noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
+                let careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
+                let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
+
+                let nombre = document.getElementById('nombre2').value;
+                let direccion = document.getElementById('direccion2').value;
+
+                if (noirQuantity > 0 || careyQuantity > 0) {
+                    let message = '';
+
+                    if (nombre) {
+                        message += `*Nombre:* ${nombre}\n`;
+                    }
+                    
+                    if (direccion) {
+                        message += `*Dirección:* ${direccion}\n`;
+                    }
+
+                    if (careyQuantity > 0) {
+                        message += `Carey: ${careyQuantity}\n`;
+                    }
+
+                    if (noirQuantity > 0) {
+                        message += `Noir: ${noirQuantity}\n`;
+                    }
+
+                    message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
+                    message += `*Envío: 4.900*\n`;
+                    message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
+
+                    const phone = '573058376094';
+                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+                    window.location.href = url;
+                } else {
+                    alert('Por favor selecciona al menos un producto');
+                }
+            ">
+                                <p>Enviar</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
         </div>
     </div>
