@@ -63,6 +63,13 @@ html {
     align-items: center;
 }
 
+.back {
+    width: 37px;
+    margin-left: 18px;
+    position: relative;
+    top: 5px;
+}
+
 .first-name {
     font-family: 'GI';
     margin-left: 20px;
@@ -453,4 +460,133 @@ html {
     color: white;
     font-family: 'Ale';
     font-size: 27px;
+}
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal2-content {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.logo2-zone {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo2-zone img {
+    height: 28%;
+}
+
+.form {
+    width: 100%;
+    height: 55%;
+}
+
+.label-text {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.label-text p {
+    font-family: 'Bogart';
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container input[type="text"] {
+    width: 83%;
+    height: 53px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #afafaf;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #f1f1f1;
+    font-family: 'Bogart';
+    font-size: 20px;
+}
+
+.input-container input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-container input[type="text"]::placeholder {
+    color: #555555;
+    /* Cambia el color del placeholder */
+}
+
+.send-button-container {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contra-container {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contra-container img {
+    width: 70%;
+}
+
+.send-button {
+    width: 50%;
+    /* Ajusta el ancho del botón según tu diseño */
+    height: 36%;
+    /* Ajusta el alto del botón según tu diseño */
+    border: none;
+    background: none;
+    background: linear-gradient(to top, #315000, #4C7B00);
+    border-radius: 20px;
+}
+
+.send-button p {
+    font-family: 'Bogart';
+    color: white;
+    font-size: 28px;
+}
+
+.cancel {
+    border: none;
+    background: none;
+    height: 60%;
+    width: 13%;
+}
+
+.cancel img {
+    height: 45%;
 }
