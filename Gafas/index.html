@@ -81,13 +81,10 @@
                         <img src="assets/1.png" alt="Imagen 2">
                     </div>
                     <div class="model-name-container">
-                        <p>NOIR</p>
+                        <p>Modelo Noir</p>
                     </div>
 
                     <div class="price-details">
-                        <div class="price-before-container">
-                            <p>Antes 89.000</p>
-                        </div>
                         <div class="price-after-container">
                             <p><span class="dollar2">$</span>39.000</p>
                         </div>
@@ -122,13 +119,10 @@
                         <img src="assets/2.png" alt="Imagen 2">
                     </div>
                     <div class="model-name-container">
-                        <p>CAREY</p>
+                        <p>Modelo Carey</p>
                     </div>
 
                     <div class="price-details">
-                        <div class="price-before-container">
-                            <p>Antes 103.000</p>
-                        </div>
                         <div class="price-after-container">
                             <p><span class="dollar2">$</span>44.000</p>
                         </div>
@@ -179,8 +173,8 @@
             message += `Modelo Noir: ${noirQuantity2}\n`;
         }
 
-        message += `Cobro: ${totalPrice + 'k'}\n`;
-        message += `*Envío Gratis*\n`;
+        message += `Cobro: ${((parseInt(totalPrice)*1000) + 3900).toLocaleString()}\n`;
+        message += `*Envío: 3.900*\n`;
         message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
 
         const phone = '573058376094';
