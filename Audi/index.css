@@ -122,9 +122,10 @@ html {
     margin-top: 16px;
 }
 
-.name-zone p {
+.main-title {
     font-family: 'Bogart';
     font-size: 25px;
+    font-weight: 100;
 }
 
 .line {
