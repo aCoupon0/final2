@@ -174,7 +174,9 @@
 
                 <div class="input-container">
                     <input id="nombre" type="text" placeholder="Tu nombre">
-                    <input id="direccion" type="text" placeholder="Ciudad & Dirección">
+                    <input id="ciudad" type="text" placeholder="Ciudad">
+                    <input id="direccion" type="text" placeholder="Dirección">
+                    <input id="detalles" type="text" placeholder="Apto, Casa...">
                 </div>
             </div>
             <div class="send-button-container">
@@ -182,39 +184,48 @@
                     <img src="assets/contraentrega.png" alt="">
                 </div>
                 <button class="send-button" onclick="
-    let blackQuantity2 = parseInt(document.getElementById('black-quantity').innerHTML);
-    let whiteQuantity2 = parseInt(document.getElementById('white-quantity').innerHTML);
-    let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
+        let blackQuantity2 = parseInt(document.getElementById('black-quantity').innerHTML);
+        let whiteQuantity2 = parseInt(document.getElementById('white-quantity').innerHTML);
+        let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
 
-    let nombre = document.getElementById('nombre').value;
-    let direccion = document.getElementById('direccion').value;
+        let nombre = document.getElementById('nombre').value;
+        let direccion = document.getElementById('direccion').value;
+        let ciudad = document.getElementById('ciudad').value;
+        let detalles = document.getElementById('detalles').value
 
-    if ((nombre.trim().length > 0) && (direccion.trim().length > 0) && (blackQuantity2 > 0 || whiteQuantity2 > 0)) {
-        let message = '';
+        if (blackQuantity2 > 0 || whiteQuantity2 > 0 && (nombre.trim().length > 0) && (direccion.trim().length > 0) && (ciudad.trim().length > 0)) {
+            let message = '';
 
-        message += `*Nombre:* ${nombre}\n`;
-        message += `*Dirección:* ${direccion}\n`;
+            if (nombre) {
+                message += `*Nombre:* ${nombre}\n`;
+            }
+            
+            if (direccion) {
+                message += `*Dirección:* ${direccion}\n`;
+                message += `${detalles}\n`;
+                message += `${ciudad}\n`;
+            }
 
-        if (whiteQuantity2 > 0) {
-            message += `WhiteGold: ${whiteQuantity2}\n`;
+            if (whiteQuantity2 > 0) {
+                message += `*WhiteGold:* ${whiteQuantity2}\n`;
+            }
+
+            if (blackQuantity2 > 0) {
+                message += `*NightShift:* ${blackQuantity2}\n`;
+            }
+
+            message += `*Cobro:* ${((parseInt(totalPrice)*1000) + 3700).toLocaleString()}\n`;
+            message += `*Envío: 3.700*\n`;
+            message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
+
+            const phone = '573058376094';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            window.location.href = url;
+        } else {
+            alert('Por favor selecciona al menos un producto');
         }
-
-        if (blackQuantity2 > 0) {
-            message += `NightShift: ${blackQuantity2}\n`;
-        }
-
-        message += `*Envío: 4.900*\n`;
-        message += `Cobro: ${((parseInt(totalPrice)*1000) + 4900).toLocaleString()}\n`;
-        message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
-
-        const phone = '573058376094';
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-        window.location.href = url;
-    } else {
-        alert('Por favor completa todos los campos');
-    }
-">
+    ">
                     <p>Enviar</p>
                 </button>
             </div>
