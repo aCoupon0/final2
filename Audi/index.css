@@ -375,6 +375,12 @@ html {
     ;
 }
 
+.agotado {
+    font-family: 'Bogart';
+    color: rgb(221, 3, 3);
+    font-size: 24px;
+}
+
 .button1,
 .button2 {
     background: none;
@@ -573,3 +579,5 @@ html {
 .cancel img {
     height: 45%;
 }
+
+
