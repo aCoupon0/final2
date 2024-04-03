@@ -58,192 +58,20 @@
             <p class="price">39.000</p>
             <p class="currency">COP</p>
         </div>
-        <button class="purchase-btn"
-            onclick="document.getElementById('hora-promocion2').innerHTML = document.getElementById('hora-promocion').innerHTML; document.getElementById('myModal').style.display='block'">
-            <p>Comprar</p>
+        <button class="purchase-btn" onclick="
+        let message = '';
+
+        message += `*Quiero comprar unas Gafas Accesori línea Vintage*`;
+        message += `*Cupón - Envío Gratis*\n`;
+        message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
+
+        const phone = '573058376094';
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+        window.location.href = url;
+">
+            <p>Quiero comprar</p>
         </button>
-    </div>
-
-    <div class="modal" id="myModal">
-        <div class="background">
-            <div class="logo-zone">
-                <button class="cancel" onclick="document.getElementById('myModal').style.display='none'">
-                    <img src="assets/back.png" alt="">
-                </button>
-            </div>
-
-            <div class="discount-zone">
-                <p>Promoción válida hasta las <span id="hora-promocion2"></span></p>
-            </div>
-
-            <div class="scrollview-container">
-
-                <div class="scrollview-item">
-                    <div class="photo-container">
-                        <img src="assets/1.png" alt="Imagen 2">
-                    </div>
-                    <div class="model-name-container">
-                        <p>Modelo Noir</p>
-                    </div>
-
-                    <div class="price-details">
-                        <div class="price-after-container">
-                            <p><span class="dollar2">$</span>39.000</p>
-                        </div>
-                    </div>
-                    <div class="line2-container">
-                        <div class="line2"></div>
-                    </div>
-
-                    <div class="buttons-zone">
-                        <button class="button1" onclick="if(parseInt(document.getElementById('noir-quantity').innerHTML) > 0) { 
-                    document.getElementById('noir-quantity').innerHTML = parseInt(document.getElementById('noir-quantity').innerHTML) - 1;
-                    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                    var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
-                    document.getElementById('final-price').innerHTML = totalPrice.toLocaleString();
-                }">-</button>
-
-                        <div class="noir-quantity" id="noir-quantity">0</div>
-
-                        <button class="button2" onclick="document.getElementById('noir-quantity').innerHTML = parseInt(document.getElementById('noir-quantity').innerHTML) + 1;
-                var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
-                document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()">+</button>
-
-                    </div>
-
-                </div>
-
-                <div class="scrollview-item">
-                    <div class="photo-container">
-                        <img src="assets/2.png" alt="Imagen 2">
-                    </div>
-                    <div class="model-name-container">
-                        <p>Modelo Carey</p>
-                    </div>
-
-                    <div class="price-details">
-                        <div class="price-after-container">
-                            <p><span class="dollar2">$</span>44.000</p>
-                        </div>
-                    </div>
-                    <div class="line2-container">
-                        <div class="line2"></div>
-                    </div>
-
-                    <div class="buttons-zone">
-                        <button class="button1" onclick="if(parseInt(document.getElementById('carey-quantity').innerHTML) > 0) { 
-                    document.getElementById('carey-quantity').innerHTML = parseInt(document.getElementById('carey-quantity').innerHTML) - 1; 
-                    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                    var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
-                    document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()
-                }">-</button>
-
-                        <div class="carey-quantity" id="carey-quantity">0</div>
-
-                        <button class="button2" onclick="document.getElementById('carey-quantity').innerHTML = parseInt(document.getElementById('carey-quantity').innerHTML) + 1;
-                var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                var totalPrice = (noirQuantity * 39000) + (careyQuantity * 44000);
-                document.getElementById('final-price').innerHTML = totalPrice.toLocaleString()">+</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="final-price-container">
-                <p class="dollar3">$</p>
-                <p class="final-price" id="final-price">0</p>
-            </div>
-
-            <button class="final-button" onclick="
-    var noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-    var careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-
-    if (noirQuantity > 0 || careyQuantity > 0) {
-        document.getElementById('myModal2Gafa').style.display='block';
-    } else {
-        alert('Por favor selecciona al menos una unidad');
-    }
-">CONFIRMAR</button>
-
-                <div class="modal2" id="myModal2Gafa">
-                    <div class="modal2-content">
-                        <div class="logo2-zone">
-                            <button class="cancel"
-                                onclick="document.getElementById('myModal2Gafa').style.display='none'">
-                                <img src="assets/back.png" alt="">
-                            </button>
-                        </div>
-                        <div class="form">
-                            <div class="label-text">
-                                <p>Solo faltaría...</p>
-                            </div>
-
-                            <div class="input-container">
-                                <input id="nombre2" type="text" placeholder="Tu nombre">
-                                <input id="ciudad2" type="text" placeholder="Ciudad">
-                                <input id="direccion2" type="text" placeholder="Dirección">
-                                <input id="detalles2" type="text" placeholder="Apto, Casa...">
-                            </div>
-                        </div>
-                        <div class="send-button-container">
-                            <div class="contra-container">
-                                <img src="assets/contraentrega.png" alt="">
-                            </div>
-                            <button class="send-button" onclick="
-                let noirQuantity = parseInt(document.getElementById('noir-quantity').innerHTML);
-                let careyQuantity = parseInt(document.getElementById('carey-quantity').innerHTML);
-                let totalPrice = parseInt(document.getElementById('final-price').innerHTML);
-
-                let nombre = document.getElementById('nombre2').value;
-                let direccion = document.getElementById('direccion2').value;
-                let ciudad = document.getElementById('ciudad2').value;
-                let detalles = document.getElementById('detalles2').value
-
-                if ((noirQuantity > 0 || careyQuantity > 0) && (nombre.trim().length > 0) && (direccion.trim().length > 0) && (ciudad.trim().length > 0)) {
-                    let message = '';
-
-                    if (nombre) {
-                        message += `*Nombre:* ${nombre}\n`;
-                    }
-                    
-                    if (direccion) {
-                        message += `*Dirección:* ${direccion}\n`;
-                        message += `${detalles}\n`;
-                        message += `${ciudad}\n`;
-                    }
-
-                    if (careyQuantity > 0) {
-                        message += `*Gafas Carey:* ${careyQuantity}\n`;
-                    }
-
-                    if (noirQuantity > 0) {
-                        message += `*Gafas Noir:* ${noirQuantity}\n`;
-                    }
-
-                    message += `*Cobro:* ${((parseInt(totalPrice)*1000)).toLocaleString()}\n`;
-                    message += `*Envío Gratis*\n`;
-                    message += `*POR FAVOR ENVÍA ESTE MENSAJE PARA CONFIRMAR EL PEDIDO*`;
-
-                    const phone = '573058376094';
-                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-                    window.location.href = url;
-                } else {
-                    alert('Por favor rellena todos los campos');
-                }
-            ">
-                                <p>Enviar</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-        </div>
     </div>
     </div>
 
